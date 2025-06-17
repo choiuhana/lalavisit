@@ -13,7 +13,9 @@ export default function FindPage() {
           loading="lazy"
         ></iframe>
       </div>
-      <p className="mb-8">서울특별시 어딘가에 위치하고 있습니다.</p>
+      <p className="mb-2">주소: 서울특별시 어딘가 1234</p>
+      <p className="mb-2">전화: 02-1234-5678</p>
+      <p className="mb-8">운영시간: 평일 09:00 ~ 18:00 (주말/공휴일 휴무)</p>
       <a href="/" className="text-blue-600 hover:underline">첫 화면으로 돌아가기</a>
     </div>
   );
