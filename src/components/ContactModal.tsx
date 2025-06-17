@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 interface ContactModalProps {
   showContact: boolean;
   setShowContact: (show: boolean) => void;
+  context?: string;
 }
 
-const ContactModal = ({ showContact, setShowContact }: ContactModalProps) => {
+const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModalProps) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -18,11 +19,12 @@ const ContactModal = ({ showContact, setShowContact }: ContactModalProps) => {
 
   useEffect(() => {
     if (showContact) {
+      setFormData(prev => ({ ...prev, message: context }));
       setTimeout(() => setAnimateIn(true), 10);
     } else {
       setAnimateIn(false);
     }
-  }, [showContact]);
+  }, [showContact, context]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
