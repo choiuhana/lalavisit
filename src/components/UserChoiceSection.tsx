@@ -28,7 +28,7 @@ const UserChoiceSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <button
             onClick={handleCenterInfo}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30"
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
           >
             <div className="text-4xl mb-4">📍</div>
             <h3 className="text-lg font-semibold mb-2">센터에 대해 알려주세요</h3>
@@ -37,7 +37,7 @@ const UserChoiceSection = () => {
           
           <button
             onClick={() => setUserType("client")}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30"
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
           >
             <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
             <h3 className="text-lg font-semibold mb-2">요양보호사가 필요합니다</h3>
@@ -46,7 +46,7 @@ const UserChoiceSection = () => {
           
           <button
             onClick={() => setUserType("caregiver")}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30"
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
           >
             <div className="text-4xl mb-4">👩‍⚕️</div>
             <h3 className="text-lg font-semibold mb-2">요양보호사 입니다</h3>
@@ -67,7 +67,7 @@ const UserChoiceSection = () => {
               처음으로 돌아가기
             </button>
             <span className="mx-2 opacity-60">|</span>
-            <div className="text-sm rounded-full bg-white bg-opacity-20 px-3 py-1">
+            <div className="text-sm rounded-full bg-white bg-opacity-20 px-3 py-1 text-gray-900">
               {userType === "client" ? "요양보호사 찾기" : "요양보호사 지원"}
             </div>
           </div>

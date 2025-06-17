@@ -51,7 +51,7 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <button
           onClick={() => setServiceType("visit")}
-          className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30"
+          className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
         >
           <div className="text-4xl mb-4">🏠</div>
           <h3 className="text-lg font-semibold mb-2">방문 요양을 원해요</h3>
@@ -59,7 +59,7 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
         </button>
         <button
           onClick={() => setServiceType("family")}
-          className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30"
+          className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
         >
           <div className="text-4xl mb-4">👪</div>
           <h3 className="text-lg font-semibold mb-2">가족 요양을 원해요</h3>
