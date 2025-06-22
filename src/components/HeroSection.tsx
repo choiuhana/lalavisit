@@ -6,7 +6,7 @@ import UserChoiceSection from "./UserChoiceSection";
 
 const HeroSection = () => {
 	return (
-		<div className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-indigo-800 text-white min-h-screen flex items-center justify-center">
+		<div className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-indigo-800 text-white flex flex-1 flex-col items-center justify-center">
 			<div className="absolute inset-0 z-0 opacity-20">
 				<Image
 					src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"

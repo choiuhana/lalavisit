@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-200 mt-12">
+    <footer className="bg-gray-800 text-gray-200">
       <div className="container mx-auto px-4 py-10">
         <h3 className="text-lg font-semibold mb-2">라라재가 요양센터</h3>
         <p>주소: 서울특별시 어딘가 1234</p>
