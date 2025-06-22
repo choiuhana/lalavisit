@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "@/components/ui/Button";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
             오시는 길
           </Link>
         </nav>
-        <button
+        <Button
           onClick={() => setOpen(!open)}
           className="md:hidden text-gray-700 hover:text-gray-900"
         >
@@ -42,7 +43,7 @@ const Navbar = () => {
               }
             />
           </svg>
-        </button>
+        </Button>
       </div>
       {open && (
         <nav className="md:hidden bg-white border-t border-gray-200">

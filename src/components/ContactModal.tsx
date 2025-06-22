@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/Button";
 
 interface ContactModalProps {
   showContact: boolean;
@@ -131,19 +132,19 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
               />
             </div>
             <div className="flex flex-col sm:flex-row justify-end gap-4 pt-6">
-              <button
+              <Button
                 type="button"
                 className="px-8 py-4 text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium text-lg"
                 onClick={closeModal}
               >
                 닫기
-              </button>
-              <button
+              </Button>
+              <Button
                 type="submit"
                 className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md font-medium text-lg"
               >
                 문의하기
-              </button>
+              </Button>
             </div>
           </form>
         </div>
