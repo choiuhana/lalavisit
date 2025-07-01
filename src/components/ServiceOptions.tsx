@@ -6,8 +6,8 @@ import ContactModal from "./ContactModal";
 
 interface ServiceOptionsProps {
 	userType: "client" | "caregiver";
-	serviceType: "visit" | "family" | null;
-	setServiceType: (type: "visit" | "family") => void;
+	serviceType: "visit" | "family" | "live-in" | null;
+	setServiceType: (type: "visit" | "family" | "live-in") => void;
 }
 
 const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOptionsProps) => {
@@ -28,18 +28,29 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 				price: "월 1,350,800원부터 (본인부담금 15%)",
 			};
 		}
+		if (userType === "client" && serviceType === "live-in") {
+			return {
+				title: "입주 간병",
+				desc: "24시간 상주하며 어르신의 일상생활 전반을 도와드립니다.",
+				price: "월 280만원부터 (계약 기간에 따라 상이)",
+			};
+		}
 		if (userType === "caregiver" && serviceType === "visit") {
 			return {
 				title: "방문 요양 업무",
 				desc: "어르신 댁을 방문하여 돌봄 서비스를 제공하는 일자리입니다.",
-				price: "급여: 시간당 12,000원부터",
 			};
 		}
 		if (userType === "caregiver" && serviceType === "family") {
 			return {
 				title: "가족 요양 지원",
 				desc: "가족 요양 프로그램에 참여하여 서비스를 제공합니다.",
-				price: "급여: 시간당 12,000원부터",
+			};
+		}
+		if (userType === "caregiver" && serviceType === "live-in") {
+			return {
+				title: "입주 간병 업무",
+				desc: "어르신 댁에 상주하며 전문적인 간병 서비스를 제공합니다.",
 			};
 		}
 		return null;
@@ -49,22 +60,30 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 
 	if (!serviceType) {
 		return (
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 				<button
 					onClick={() => setServiceType("visit")}
-					className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
+					className="bg-blue-100 hover:bg-blue-200 p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-blue-200 text-gray-800"
 				>
 					<div className="text-4xl mb-4">🏠</div>
 					<h3 className="text-lg font-semibold mb-2">방문 요양을 원해요</h3>
-					<p className="text-sm opacity-80">집으로 방문하는 돌봄 서비스</p>
+					<p className="text-sm text-gray-700">집으로 방문하는 돌봄 서비스</p>
 				</button>
 				<button
 					onClick={() => setServiceType("family")}
-					className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-white border-opacity-30 text-gray-900"
+					className="bg-green-100 hover:bg-green-200 p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-green-200 text-gray-800"
 				>
 					<div className="text-4xl mb-4">👪</div>
 					<h3 className="text-lg font-semibold mb-2">가족 요양을 원해요</h3>
-					<p className="text-sm opacity-80">가족이 돌봄을 제공하는 서비스</p>
+					<p className="text-sm text-gray-700">가족이 돌봄을 제공하는 서비스</p>
+				</button>
+				<button
+					onClick={() => setServiceType("live-in")}
+					className="bg-purple-100 hover:bg-purple-200 p-6 rounded-xl shadow-md transition transform hover:-translate-y-1 border border-purple-200 text-gray-800"
+				>
+					<div className="text-4xl mb-4">👩‍⚕️</div>
+					<h3 className="text-lg font-semibold mb-2">입주 간병을 원해요</h3>
+					<p className="text-sm text-gray-700">24시간 전문 간병 서비스</p>
 				</button>
 			</div>
 		);
@@ -74,7 +93,7 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 
 	return (
 		<div className="space-y-6 text-center">
-			<h3 className="text-2xl font-semibold">{detail?.title}</h3>
+			<h3 className="text-xl font-semibold">{detail?.title}</h3>
 			<p>{detail?.desc}</p>
 			<p className="font-medium">{detail?.price}</p>
 			<div className="flex flex-col sm:flex-row gap-4 justify-center">

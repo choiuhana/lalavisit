@@ -10,7 +10,7 @@ const Navbar = () => {
 		<header className="bg-white shadow sticky top-0 z-20">
 			<div className="container mx-auto flex items-center justify-between px-4 py-3 relative">
 				<Link href="/" className="text-xl font-semibold text-gray-800">
-					라라재가 요양센터
+					라라재가방문요양센터
 				</Link>
 				<nav className="hidden md:flex space-x-6 text-gray-700">
 					<Link href="/about" className="hover:text-gray-900">

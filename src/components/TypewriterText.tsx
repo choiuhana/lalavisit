@@ -9,11 +9,11 @@ interface TypewriterTextProps {
   repeat?: boolean; // 반복 여부
 }
 
-const TypewriterText = ({ 
-  text, 
-  repeatDelay = 3000, 
-  typingSpeed = 100, 
-  repeat = false 
+const TypewriterText = ({
+  text,
+  repeatDelay = 3000,
+  typingSpeed = 100,
+  repeat = false
 }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,7 +36,7 @@ const TypewriterText = ({
         setCurrentIndex(0);
         return;
       }
-      
+
       timeout = setTimeout(() => {
         setDisplayText(prev => prev.substring(0, prev.length - 1));
       }, typingSpeed / 2);
@@ -55,10 +55,12 @@ const TypewriterText = ({
     return () => clearTimeout(timeout);
   }, [currentIndex, displayText, isDeleting, isPaused, repeat, repeatDelay, text, typingSpeed]);
 
+  // 텍스트 크기는 부모 요소에서 상속받기 때문에 별도 수정 필요 없음
+  // 필요시 아래처럼 클래스를 추가할 수 있습니다
   return (
-    <span className="inline-block">
+    <span className="font-bold inline-block relative">
       {displayText}
-      <span className="cursor-blink">|</span>
+      <span className={`cursor ${true ? 'animate-blink' : 'opacity-0'}`}></span>
     </span>
   );
 };

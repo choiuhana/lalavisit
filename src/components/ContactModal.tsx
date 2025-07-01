@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 interface ContactModalProps {
   showContact: boolean;
   setShowContact: (show: boolean) => void;
-  context?: string;
 }
 
 const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModalProps) => {
@@ -90,7 +89,7 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="홍길동"
                   required
                 />
@@ -102,7 +101,7 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="010-0000-0000"
                   required
                 />
@@ -115,7 +114,7 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="example@email.com"
               />
             </div>
@@ -125,7 +124,7 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg h-40 resize-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 h-40 resize-none"
                 placeholder="문의하실 내용을 자세히 적어주세요."
                 required
               />
@@ -133,14 +132,14 @@ const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModa
             <div className="flex flex-col sm:flex-row justify-end gap-4 pt-6">
               <button
                 type="button"
-                className="px-8 py-4 text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium text-lg"
+                className="px-6 py-3 text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-50 font-medium"
                 onClick={closeModal}
               >
                 닫기
               </button>
               <button
                 type="submit"
-                className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md font-medium text-lg"
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md font-medium"
               >
                 문의하기
               </button>
