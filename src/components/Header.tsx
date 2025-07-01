@@ -6,11 +6,6 @@ import { useState } from "react";
 
 const Header = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [serviceMenuOpen, setServiceMenuOpen] = useState(false);
-
-	const toggleServiceMenu = () => {
-		setServiceMenuOpen(!serviceMenuOpen);
-	};
 
 	return (
 		<header className="bg-white shadow-sm py-4 relative">
