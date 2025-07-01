@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 interface ContactModalProps {
   showContact: boolean;
   setShowContact: (show: boolean) => void;
+	context?: string;
 }
 
 const ContactModal = ({ showContact, setShowContact, context = "" }: ContactModalProps) => {
