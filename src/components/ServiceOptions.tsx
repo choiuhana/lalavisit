@@ -18,21 +18,18 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 			return {
 				title: "방문 요양",
 				desc: "전문 요양보호사가 가정을 방문하여 돌봄 서비스를 제공합니다.",
-				price: "월 1,350,800원부터 (본인부담금 15%)",
 			};
 		}
 		if (userType === "client" && serviceType === "family") {
 			return {
 				title: "가족 요양",
 				desc: "가족이 직접 요양 서비스를 제공할 수 있도록 교육과 지원을 해드립니다.",
-				price: "월 1,350,800원부터 (본인부담금 15%)",
 			};
 		}
 		if (userType === "client" && serviceType === "live-in") {
 			return {
 				title: "입주 간병",
 				desc: "24시간 상주하며 어르신의 일상생활 전반을 도와드립니다.",
-				price: "월 280만원부터 (계약 기간에 따라 상이)",
 			};
 		}
 		if (userType === "caregiver" && serviceType === "visit") {
@@ -95,7 +92,6 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 		<div className="space-y-6 text-center">
 			<h3 className="text-xl font-semibold">{detail?.title}</h3>
 			<p>{detail?.desc}</p>
-			<p className="font-medium">{detail?.price}</p>
 			<div className="flex flex-col sm:flex-row gap-4 justify-center">
 				<Link
 					href="/find"
