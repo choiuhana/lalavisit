@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
+import { ServiceType, UserType } from "@/types";
 
 interface ServiceOptionsProps {
-	userType: "client" | "caregiver";
-	serviceType: "visit" | "family" | "live-in" | null;
-	setServiceType: (type: "visit" | "family" | "live-in") => void;
+	serviceType: ServiceType;
+	userType: UserType;
+	setServiceType: (type: ServiceType) => void;
 }
 
 const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOptionsProps) => {
@@ -55,8 +56,6 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 		}
 		return null;
 	};
-
-	const contextMsg = `대상: ${userType}, 서비스: ${serviceType}`;
 
 	if (!serviceType) {
 		return (
@@ -110,7 +109,12 @@ const ServiceOptions = ({ userType, serviceType, setServiceType }: ServiceOption
 					문의하고 싶어요
 				</button>
 			</div>
-			<ContactModal showContact={showContact} setShowContact={setShowContact} context={contextMsg} />
+			<ContactModal
+				showContact={showContact}
+				setShowContact={setShowContact}
+				userType={userType}
+				serviceType={serviceType}
+			/>
 		</div>
 	);
 };
