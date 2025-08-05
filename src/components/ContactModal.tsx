@@ -49,7 +49,7 @@ const ContactModal = ({ showContact, setShowContact, userType, serviceType }: Co
 					name: formData.name,
 					email: formData.email,
 					phoneNumber: formData.phone,
-					message: `문의한 사람: ${userType === "client" ? "사용자" : "요양보호사"} 원하는 서비스: ${serviceType === "family" ? "가족 요양" : serviceType === "live-in" ? "입주 간병" : "방문 요양"}\n\n${formData.message}`,
+					message: `문의한 사람: ${userType === "client" ? "사용자" : "요양보호사"}, 원하는 서비스: ${serviceType === "family" ? "가족 요양" : serviceType === "live-in" ? "입주 간병" : "방문 요양"}\n\n${formData.message}`,
 				}),
 			});
 
